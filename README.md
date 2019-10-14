@@ -24,5 +24,5 @@ npm install
 
 ### Executing test
 ```bash
-node index.js
+node app.js
 ```
