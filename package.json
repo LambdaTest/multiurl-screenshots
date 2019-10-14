@@ -1,0 +1,14 @@
+{
+  "name": "multiurl-screenshots",
+  "version": "1.0.0",
+  "description": "Take screenshots on multiple urls using LambdaTest Screenshot APIs",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "LambdaTest",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}

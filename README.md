@@ -1,0 +1,28 @@
+## LambdaTest Screenshots
+
+NodeJS script to take screenshots on multiple urls using LambdaTest Screenshot APIs.
+
+
+## Requirements
+
+* Node 8
+* Git
+
+
+## Common setup
+
+Clone the repo and install the dependencies.
+
+```bash
+git clone https://github.com/LambdaTest/multiurl-screenshots.git
+cd the-example-app.nodejs
+```
+
+```bash
+npm install
+```
+
+### Executing test
+```bash
+node index.js
+```
