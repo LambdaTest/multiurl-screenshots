@@ -15,7 +15,7 @@ Clone the repo and install the dependencies.
 
 ```bash
 git clone https://github.com/LambdaTest/multiurl-screenshots.git
-cd the-example-app.nodejs
+cd multiurl-screenshots
 ```
 
 ```bash
