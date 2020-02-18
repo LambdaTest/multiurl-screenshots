@@ -110,29 +110,57 @@ async function startTest() {
     //Array of all testIDS of completed tests
     let testIDS = [];
     //Your URLS for which to take screenshots
-    let urls = ["https://balega-socks.implus.com/", "https://balega-socks.implus.com/products/all-products/", "https://balega-socks.implus.com/products/all-products/balega-blister-resist-crew-running-socks"]
+    let urls = ["https://www.lambdatest.com/list-of-browsers", "https://www.lambdatest.com/", ]
     //Your OS and Browser configurations on which to take screenshots
     let osBrowserConfig = {
-        "ios 12.0": {
-            "devices": [
-                "iphone xr",
-                "iphone xs",
-                "iphone xs max"
-            ]
+        "windows 10": {
+          "chrome": [
+            "76",
+            "75"
+          ],
+          "firefox": [
+            "67",
+            "66"
+          ],
+          "opera": [
+            "58",
+            "57"
+          ],
+          "ie": [
+            "11"
+          ]
         },
-        "android 7.0": {
-            "devices": [
-                "galaxy j7 max",
-                "galaxy s8",
-                "galaxy s8+",
-                "galaxy tab s3 9.3",
-                "huawei honor 6x",
-                "nexus 5x",
-                "nexus 6p",
-                "oppo r9"
-            ]
+        "macos mojave": {
+          "chrome": [
+            "76",
+            "75"
+          ],
+          "firefox": [
+            "67",
+            "66"
+          ],
+          "opera": [
+            "58",
+            "57"
+          ],
+          "safari": [
+            "12"
+          ]
+        },
+        "ios 12.0": {
+          "devices": [
+            "iphone xr",
+            "iphone xs",
+            "iphone xs max"
+          ]
+        },
+        "android 9.0": {
+          "devices": [
+            "galaxy s9 plus"
+          ]
         }
-    }
+      }
+    
     let testPayload = {}
 
     for (var i = 0, len = urls.length; i < len; i++) {
