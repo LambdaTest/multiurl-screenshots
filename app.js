@@ -1,8 +1,8 @@
 const axios = require('axios');
 //Your LambdaTest username
-const username = "XXXXXX";
+const username = "xxxx";
 //Your LambdaTest accessToken
-const accessToken = "XXXXXXXXXXXXXXXXXX";
+const accessToken = "xxxx";
 axios.defaults.baseURL = 'https://api.lambdatest.com/screenshots/v1';
 axios.defaults.headers.common['Authorization'] = "Basic " + Buffer.from(username + ":" + accessToken).toString('base64');
 axios.defaults.headers.common['Content-Type'] = 'application/json';
@@ -110,27 +110,57 @@ async function startTest() {
     //Array of all testIDS of completed tests
     let testIDS = [];
     //Your URLS for which to take screenshots
-    let urls = ["https://balega-socks.implus.com/","https://balega-socks.implus.com/products/all-products/","https://balega-socks.implus.com/products/all-products/balega-blister-resist-crew-running-socks"]
+    let urls = ["https://www.lambdatest.com/list-of-browsers", "https://www.lambdatest.com/", ]
     //Your OS and Browser configurations on which to take screenshots
     let osBrowserConfig = {
         "windows 10": {
-            "chrome": [
-                "76",
-                "75"
-            ],
-            "firefox": [
-                "67",
-                "66"
-            ],
-            "opera": [
-                "58",
-                "57"
-            ],
-            "ie": [
-                "11"
-            ]
+          "chrome": [
+            "76",
+            "75"
+          ],
+          "firefox": [
+            "67",
+            "66"
+          ],
+          "opera": [
+            "58",
+            "57"
+          ],
+          "ie": [
+            "11"
+          ]
+        },
+        "macos mojave": {
+          "chrome": [
+            "76",
+            "75"
+          ],
+          "firefox": [
+            "67",
+            "66"
+          ],
+          "opera": [
+            "58",
+            "57"
+          ],
+          "safari": [
+            "12"
+          ]
+        },
+        "ios 12.0": {
+          "devices": [
+            "iphone xr",
+            "iphone xs",
+            "iphone xs max"
+          ]
+        },
+        "android 9.0": {
+          "devices": [
+            "galaxy s9 plus"
+          ]
         }
-    }
+      }
+    
     let testPayload = {}
 
     for (var i = 0, len = urls.length; i < len; i++) {
