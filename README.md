@@ -1,4 +1,4 @@
-## Take Screenshots Using Nodejs on LambdaTest
+# Take Screenshots Using Nodejs on LambdaTest
 
 NodeJS script to take screenshots on multiple urls using LambdaTest Screenshot APIs.
 
