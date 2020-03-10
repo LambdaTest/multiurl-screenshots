@@ -1,3 +1,4 @@
+var configFile = require('./config');
 const axios = require('axios');
 //Your LambdaTest username
 const username = "xxxx";
@@ -110,56 +111,9 @@ async function startTest() {
     //Array of all testIDS of completed tests
     let testIDS = [];
     //Your URLS for which to take screenshots
-    let urls = ["https://www.lambdatest.com/list-of-browsers", "https://www.lambdatest.com/", ]
+    let urls = configFile.urllist;
     //Your OS and Browser configurations on which to take screenshots
-    let osBrowserConfig = {
-        "windows 10": {
-          "chrome": [
-            "76",
-            "75"
-          ],
-          "firefox": [
-            "67",
-            "66"
-          ],
-          "opera": [
-            "58",
-            "57"
-          ],
-          "ie": [
-            "11"
-          ]
-        },
-        "macos mojave": {
-          "chrome": [
-            "76",
-            "75"
-          ],
-          "firefox": [
-            "67",
-            "66"
-          ],
-          "opera": [
-            "58",
-            "57"
-          ],
-          "safari": [
-            "12"
-          ]
-        },
-        "ios 12.0": {
-          "devices": [
-            "iphone xr",
-            "iphone xs",
-            "iphone xs max"
-          ]
-        },
-        "android 9.0": {
-          "devices": [
-            "galaxy s9 plus"
-          ]
-        }
-      }
+    let osBrowserConfig = configFile.BrowserConfigurations;
     
     let testPayload = {}
 
@@ -167,12 +121,12 @@ async function startTest() {
         try {
 
             testPayload = {
-                defer_time: 2,
-                email: false,
-                layout: "portrait",
-                mac_res: "1024x768",
-                win_res: "1366X768",
-                smart_scroll: true,
+                defer_time: configFile.defer_time,
+                email: configFile.email,
+                layout: configFile.layout,
+                mac_res: configFile.mac_res,
+                win_res: configFile.win_res,
+                smart_scroll: configFile.smart_scroll,
                 url: urls[i],
                 configs: osBrowserConfig
             }
