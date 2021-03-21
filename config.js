@@ -1,6 +1,6 @@
 //Include all the screenshot parameters in this configuration file
-module.exports = { 
-     urllist: ["https://www.lambdatest.com/list-of-browsers", "https://www.lambdatest.com/"],
+module.exports = {
+     urllist_profiles: [{"url": "<Put Url 1>","profile_id": "<Respective added Profile>"}, {"url": "<Put Url 2>","profile_id": "<Respective added Profile>"}],
      BrowserConfigurations: {
         "windows 10": {
           "chrome": [
@@ -56,4 +56,3 @@ module.exports = {
      win_res: "1366X768",
      smart_scroll: true
 };
-

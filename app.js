@@ -111,13 +111,13 @@ async function startTest() {
     //Array of all testIDS of completed tests
     let testIDS = [];
     //Your URLS for which to take screenshots
-    let urls = configFile.urllist;
+    let urls_profiles = configFile.urllist_profiles;
     //Your OS and Browser configurations on which to take screenshots
     let osBrowserConfig = configFile.BrowserConfigurations;
-    
+
     let testPayload = {}
 
-    for (var i = 0, len = urls.length; i < len; i++) {
+    for (var i = 0, len = urls_profiles.length; i < len; i++) {
         try {
 
             testPayload = {
@@ -127,8 +127,9 @@ async function startTest() {
                 mac_res: configFile.mac_res,
                 win_res: configFile.win_res,
                 smart_scroll: configFile.smart_scroll,
-                url: urls[i],
-                configs: osBrowserConfig
+                url: urls_profiles[i]["url"],
+                configs: osBrowserConfig,
+                profile_id: urls_profiles[i]["profile_id"]
             }
 
 
@@ -139,7 +140,7 @@ async function startTest() {
                 try {
                     testOutput = await checkIfTestCompleted(response.test_id)
                     testIDS.push(testOutput.test_id)
-                    console.log("Test Completed for url:%s with test_id:%s", urls[i], testOutput.test_id)
+                    console.log("Test Completed for url:%s with test_id:%s", urls_profiles[i], testOutput.test_id)
                 } catch (error) {
                     console.log("Unable to check test status reason: ", error.message)
                     if (error instanceof AttemptsExcededError) {
